@@ -8,6 +8,11 @@ work.addEventListener('click', () => {
     for(var i=0; i < subnav.length; i++){
         subnav[i].classList.toggle("hideMenu");
     }
+    if(work.innerHTML === "Work+"){
+        work.innerHTML = "Work-"
+    }else{
+        work.innerHTML = "Work+"
+    }
 });
 
 for(var i=0; i< buttons.length; i++){
