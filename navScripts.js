@@ -8,10 +8,10 @@ work.addEventListener('click', () => {
     for(var i=0; i < subnav.length; i++){
         subnav[i].classList.toggle("hideMenu");
     }
-    if(work.innerHTML === "Work+"){
-        work.innerHTML = "Work-"
+    if (work.innerHTML === "Portfolio+") {
+        work.innerHTML = "Portfolio-"
     }else{
-        work.innerHTML = "Work+"
+        work.innerHTML = "Portfolio+"
     }
 });
 
