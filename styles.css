@@ -45,6 +45,8 @@ img{
     padding-left:15px;
 }
 
+
+
 .navBar{
     /* width:150px;*/
     height: 600px; 
@@ -139,9 +141,71 @@ GALLERY
     width: 100%;
 }
 
+/* MOBILE NAV */
+
+
+.topnav {
+    display: none;
+    overflow: hidden;
+    /* background-color: #333; */
+    position: relative;
+    grid-area: sidebar;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.topnav a.icon {
+    /* background: black; */
+    background-image: url("img/hamIcon.png");
+    width:20px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a:hover {
+    /* background-color: #ddd;
+    color: black; */
+    text-decoration: underline;
+}
+
+.active2 {
+    /* background-color: #4CAF50; */
+    /* color: white; */
+    text-decoration: underline;
+}
+
+.topnavTitle{
+    font-weight: 700;
+    font-family: 'DM Sans',
+    sans-serif;
+}
+
 /* 
 
+
+
+
+
+
 MEDIA
+
+
+
+
+
+
 
 */
 
@@ -215,13 +279,22 @@ MEDIA
           max-width: 50%;
       }
 
+      .row{
+          flex-wrap: nowrap;
+      }
+
 }
 
 @media screen and (max-width: 450px) {
+    .topnav{
+        display: block;
+    }
+
     .navBar {
-        height: 250px;
+        height: 100%;
         grid-area: sidebar;
         padding: 0;
+        display: none;
     }
 
     ul.sidenav li a {
@@ -239,29 +312,37 @@ MEDIA
 
     #mainIndex, #mainGallery {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 100%;
         grid-gap: 0;
         grid-template-rows: auto;
         grid-template-areas:
-            "header header"
-            "sidebar sidebar"
-            "gallery gallery"
-            "gallery gallery";
+            "sidebar"
+            "gallery";
     }
 
     img {
-        margin: 0 30px;
+        margin: 0;
+    }
+
+    .mainImg{
+        margin: 0 5%;
     }
 
     .title2{
         text-align: center;
     }
 
-   
+   .content{
+       margin-top: 10px;
+   }
 
     .column {
         flex: 100%;
         max-width: 100%;
+    }
+
+    .row {
+        flex-wrap: wrap;
     }
 
 }
