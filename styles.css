@@ -225,6 +225,7 @@ MEDIA
     .navBar {
         height: 250px;
         grid-area: sidebar;
+        padding: 0;
     }
 
     ul.sidenav li a {
@@ -254,6 +255,10 @@ MEDIA
 
     img {
         margin: 0 30px;
+    }
+
+    .title2{
+        text-align: center;
     }
 
    
