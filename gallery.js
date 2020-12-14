@@ -20,9 +20,10 @@ window.addEventListener('load', (event) => {
     var columns = document.getElementsByClassName("column")
     var columnIncrementer = 0;
     for(var i =0; i< listOfImgs.length; i++){
-        console.log("columnIncrementer: " + columnIncrementer)
         var img = document.createElement('img');
         img.src = listOfImgs[i];
+        img.className = "galleryImg"
+        img.style.display = "none";
         columns[columnIncrementer].appendChild(img);
         if(columnIncrementer < 2){
             columnIncrementer += 1;
@@ -30,5 +31,39 @@ window.addEventListener('load', (event) => {
             columnIncrementer = 0;
         }
     }
+    var galleryImages = document.getElementsByClassName("galleryImg");
+    const tl = gsap.timeline();
 
+    // tl.fromTo(galleryImages, 2.9, {
+    //     // autoAlpha: 0,
+    //     rotationX: -90,
+    //     transformOrigin: '50% 0%'
+    // }, {
+    //     // autoAlpha: 1,
+    //     rotationX: 0,
+    //     ease: Power2.easeInOut,
+    //     stagger: 0.2
+    // }, 0.1, 0.3);
+
+    
+
+    galleryImages[0].addEventListener("load", (e)=>{
+        for (var i = 0; i < galleryImages.length; i++) {
+            galleryImages[i].style.display = "block";
+        }
+        tl.fromTo(galleryImages, 1.5, {
+            css: {
+                opacity: 0,
+                 x: "-5px"
+            }
+        }, {
+            css: {
+                opacity: 1,
+                 x: 0
+            },
+            stagger:0.4,
+            ease: Power2.easeInOut
+        },0.2);
+    })
+    // imgOne.style.display = "none"
 });

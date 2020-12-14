@@ -1,7 +1,10 @@
 
 var work = document.getElementById("workLink");
+var mainImg = document.getElementById("mainImg");
+var sideNavItems = document.querySelectorAll(".navLink");
 var subnav = document.getElementsByClassName("subnav");
 var buttons = document.getElementsByClassName("navLink");
+const tl = gsap.timeline();
    
 
 work.addEventListener('click', () => {
@@ -31,3 +34,24 @@ function myFunction() {
         x.style.display = "block";
     }
 }
+
+tl.fromTo(mainImg, 1.2, {height: "0%"}, {height:"100%", ease: Power2.easeInOut})
+// .staggerFromTo(sideNavItems, 1.2, {
+//     autoAlpha: 0,
+//     rotationX: -90,
+//     transformOrigin: '50% 0%'
+// }, {
+//     autoAlpha: 1,
+//     rotationX: 0,
+//     ease: Elastic.easeOut.config(1, 0.3)
+// }, 0.1, 0.3);
+tl.fromTo(sideNavItems, 1.4, {
+    autoAlpha: 0,
+    rotationX: -90,
+    transformOrigin: '50% 0%'
+}, {
+    autoAlpha: 1,
+    rotationX: 0,
+    ease: Power2.easeInOut,
+    stagger: 0.2
+}, 0.1, 0.3);
