@@ -141,7 +141,7 @@ window.addEventListener('load', (event) => {
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         //captionText.innerHTML = dots[slideIndex - 1].alt;
-        captionText.innerHTML = `${titles[slideIndex - 1]},<br> ${sizes[slideIndex - 1]},<br> ${media[slideIndex - 1]}`
+        captionText.innerHTML = `${titles[slideIndex - 1]}, ${sizes[slideIndex - 1]}, ${media[slideIndex - 1]}`
     }
     
     
