@@ -24,8 +24,8 @@
                 </div>
                 <li><a class="navLink" href="index.html">Home</a></li>
                 <li><a id="workLink" class="navLink" href="#work">Portfolio+</a></li>
-                <li class="subnav hideMenu navLink active"><a href="landscapes.html">Landscapes</a></li>
-                <li class="subnav hideMenu navLink"><a href="studies.html">Studies</a></li>
+                <li class="subnav active"><a href="landscapes.html">Landscapes</a></li>
+                <li class="subnav"><a href="studies.html">Studies</a></li>
                 <li><a class="navLink" href="about.html">About</a></li>
                 <li><a class="navLink" href="contact.html">Contact</a></li>
             </ul>
@@ -51,6 +51,21 @@
                 <div class="column"></div>
                 <div class="column"></div>
             </div>
+            <div id="myModal" class="modal">
+                <span class="close cursor">&times;</span>
+                <div class="modal-content">
+
+                    <div id="slideContainer"></div>
+
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+
+                    <div id="thumbnailContainer"></div>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"

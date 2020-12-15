@@ -5,16 +5,55 @@ var sideNavItems = document.querySelectorAll(".navLink");
 var subnav = document.getElementsByClassName("subnav");
 var buttons = document.getElementsByClassName("navLink");
 const tl = gsap.timeline();
-   
+
+let tween = gsap.fromTo(subnav, 1.4, {
+        height: "0px"
+    }, {
+        height: "40px"
+    })
+    let tween2 = gsap.fromTo(subnav, 1.4, {
+        autoAlpha: 0,
+        rotationX: -90,
+        transformOrigin: '50% 0%',
+    }, {
+        autoAlpha: 1,
+        rotationX: 0,
+        ease: Power2.easeInOut,
+        stagger: 0.2
+    })
+    let tween3 = gsap.fromTo(subnav, 1.4, {
+        autoAlpha: 0,
+        rotationX: -90,
+        transformOrigin: '50% 0%',
+    }, {
+        autoAlpha: 1,
+        rotationX: 0,
+        ease: Power2.easeInOut,
+        stagger: 0.2,
+        delay: "0.4"
+    })
+
+tween.pause();
+tween2.pause();
+tween3.pause();
+
+if (subnav[0].classList.contains("active") || subnav[1].classList.contains("active")) {
+    work.innerHTML = "Portfolio-"
+    tween.play();
+    tween3.play();
+}
 
 work.addEventListener('click', () => {
-    for(var i=0; i < subnav.length; i++){
-        subnav[i].classList.toggle("hideMenu");
-    }
+    
     if (work.innerHTML === "Portfolio+") {
         work.innerHTML = "Portfolio-"
+        tween.play();
+        tween2.play();
     }else{
         work.innerHTML = "Portfolio+"
+        tween.reverse();
+        tween2.reverse();
+        tween3.reverse();
     }
 });
 
@@ -36,15 +75,7 @@ function myFunction() {
 }
 
 tl.fromTo(mainImg, 1.2, {height: "0%"}, {height:"100%", ease: Power2.easeInOut})
-// .staggerFromTo(sideNavItems, 1.2, {
-//     autoAlpha: 0,
-//     rotationX: -90,
-//     transformOrigin: '50% 0%'
-// }, {
-//     autoAlpha: 1,
-//     rotationX: 0,
-//     ease: Elastic.easeOut.config(1, 0.3)
-// }, 0.1, 0.3);
+
 tl.fromTo(sideNavItems, 1.4, {
     autoAlpha: 0,
     rotationX: -90,
@@ -55,3 +86,4 @@ tl.fromTo(sideNavItems, 1.4, {
     ease: Power2.easeInOut,
     stagger: 0.2
 }, 0.1, 0.3);
+
