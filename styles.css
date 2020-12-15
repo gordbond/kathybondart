@@ -327,6 +327,7 @@ GALLERY
 
 .mySlides {
     display: none;
+    background-color: black;
 }
 
 .cursor {

@@ -13,6 +13,12 @@ window.addEventListener('load', (event) => {
         "img/studies/whiteHouse.jpg",
         "img/studies/blackAndWhiteDoorway.jpg"
     ]
+
+    var titles = ["title1", "title2", "title3", "title4", "title5", "title6", "title7", "title8", "title9", "title10" ];
+
+    var sizes = ['10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"', '10"x12"'];
+
+    var media = ["acrylic", "marker", "acrylic", "marker", "acrylic", "marker", "acrylic", "marker", "acrylic", "marker"];
     //add a row div
     //add 4 column divs
     //add css    
@@ -134,7 +140,8 @@ window.addEventListener('load', (event) => {
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-        captionText.innerHTML = dots[slideIndex - 1].alt;
+        //captionText.innerHTML = dots[slideIndex - 1].alt;
+        captionText.innerHTML = `${titles[slideIndex - 1]},<br> ${sizes[slideIndex - 1]},<br> ${media[slideIndex - 1]}`
     }
     
     
